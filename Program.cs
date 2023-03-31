@@ -43,7 +43,7 @@ class Program
         var temasEscolhidos = EscolherTema(temas, rnd);
 
         Console.WriteLine($"Letra: {letraEscolhida}");
-        Console.WriteLine($"Temas: {String.Join(",", temasEscolhidos)}");
+        Console.WriteLine($"Temas: {String.Join(", ", temasEscolhidos)}");
         // criando tabela no banco de dados (só criará se não existir)
         await data.AsyncCriarTabela();
         // inserindo dados na tabela

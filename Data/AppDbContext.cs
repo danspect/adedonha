@@ -58,9 +58,11 @@ public class AppDbContext
             var comando = conexao.CreateCommand();
             comando.CommandText = 
             @$"
-                INSERT INTO Partidas
-                VALUES ({letra}, {String.Join(",", temas)})
+                INSERT INTO Partidas (Letra, Temas)
+                VALUES ($letra, $temas)
             ";
+            comando.Parameters.AddWithValue("$letra", letra);
+            comando.Parameters.AddWithValue("$temas", String.Join(", ", temas));
             await comando.ExecuteNonQueryAsync();
         }
     }
