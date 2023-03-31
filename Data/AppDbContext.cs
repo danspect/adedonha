@@ -44,7 +44,7 @@ public class AppDbContext
                     Letra TEXT NOT NULL,
                     Temas TEXT NOT NULL
                     );
-                ";
+            ";
             await comando.ExecuteNonQueryAsync();
         }
     }
@@ -56,7 +56,7 @@ public class AppDbContext
             await conexao.OpenAsync();
 
             var comando = conexao.CreateCommand();
-            comando.CommandText = 
+            comando.CommandText =
             @$"
                 INSERT INTO Partidas (Letra, Temas)
                 VALUES ($letra, $temas)
