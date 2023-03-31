@@ -26,10 +26,42 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Data.Sqlite;
 
-namespace adedonha.Data
+namespace adedonha.Data;
+
+public class AppDbContext
 {
-    public class AppDbContext
+    public async Task AsyncCriarTabela()
     {
-        
+        using (var conexao = new SqliteConnection("Data Source=partidas.db"))
+        {
+            await conexao.OpenAsync();
+
+            var comando = conexao.CreateCommand();
+            comando.CommandText =
+            @"
+                    CREATE TABLE IF NOT EXISTS Partidas(
+                    Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                    Letra TEXT NOT NULL,
+                    Temas TEXT NOT NULL
+                    );
+                ";
+            await comando.ExecuteNonQueryAsync();
+        }
+    }
+
+    public async Task AsyncInserir(string[] temas, char letra)
+    {
+        using (var conexao = new SqliteConnection("Data Source=partidas.dc"))
+        {
+            await conexao.OpenAsync();
+
+            var comando = conexao.CreateCommand();
+            comando.CommandText = 
+            @$"
+                INSERT INTO Partidas
+                VALUES ({letra}, {String.Join(",", temas)})
+            ";
+            await comando.ExecuteNonQueryAsync();
+        }
     }
 }
