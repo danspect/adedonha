@@ -20,9 +20,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+using adedonha.Data;
+
 class Program
 {
-    static void Main()
+    static async Task Main()
     {
         char[] alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
         var temas = new List<string>(){
@@ -32,6 +34,7 @@ class Program
             "planetas"  ,"personagens"
         };
 
+        var data = new AppDbContext();
         // objeto que gera um número aleatório
         var rnd = new Random();
         // gerando uma letra aleatória
@@ -41,6 +44,10 @@ class Program
 
         Console.WriteLine($"Letra: {letraEscolhida}");
         Console.WriteLine($"Temas: {String.Join(",", temasEscolhidos)}");
+        // criando tabela no banco de dados (só criará se não existir)
+        await data.AsyncCriarTabela();
+        // inserindo dados na tabela
+        await data.AsyncInserir(temasEscolhidos, letraEscolhida);
     }
 
     static char EscolherLetra(char[] alfa, Random random)

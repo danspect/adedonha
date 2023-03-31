@@ -32,7 +32,7 @@ public class AppDbContext
 {
     public async Task AsyncCriarTabela()
     {
-        using (var conexao = new SqliteConnection("Data Source=partidas.db"))
+        using (var conexao = new SqliteConnection("Data Source=Data/partidas.db"))
         {
             await conexao.OpenAsync();
 
@@ -51,7 +51,7 @@ public class AppDbContext
 
     public async Task AsyncInserir(string[] temas, char letra)
     {
-        using (var conexao = new SqliteConnection("Data Source=partidas.dc"))
+        using (var conexao = new SqliteConnection("Data Source=Data/partidas.db"))
         {
             await conexao.OpenAsync();
 
