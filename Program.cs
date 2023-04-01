@@ -57,24 +57,28 @@ class Program
         Console.WriteLine($"Tempo decorrido: {tempoDecorrido.Milliseconds}ms");
     }
 
+    /// <summary>
+    ///  Esta função seleciona uma letra para o jogo
+    /// </summary>
+    /// <param name="alfa">as letras possiveis</param>
+    /// <param name="random">o objeto que gerará os "números aleatorios"</param>
+    /// <returns>Um caractere (letra) aleatório</returns>
+
     static char EscolherLetra(char[] alfa, Random random)
     {
-        /// <summary>
-        /// Esta função seleciona uma letra para o jogo
-        /// </summary>
-        /// <returns>Um caractere (letra) aleatório</returns>
-        
         char letra = alfa[random.Next(0, alfa.Length - 1)];
         return letra;
     }
 
+    /// <summary>
+    /// Esta função escolhe 4 temas para o jogo
+    /// </summary>
+    /// <param name="temas">os temas possiveis</param>
+    /// <param name="random">o objeto que gerará os "números aleatorios"</param>
+    /// <returns>Um array com 4 temas aleatorios</returns>
+
     static string[] EscolherTema(List<string> temas, Random random)
     {
-        /// <summary>
-        ///  Esta função escolhe 4 temas para o jogo
-        /// </summary>
-        /// <returns>Um array de strings contendo 4 temas de adedonha</returns>
-
         string[] temasSelecionados = new string[4];
         for(int i = 0; i < 4; i++)
         {
