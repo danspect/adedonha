@@ -30,8 +30,14 @@ namespace adedonha.Data;
 
 public class AppDbContext
 {
+    /// <summary>
+    /// Caso não tiver nenhum banco de dados, esta função cria um banco
+    /// de dados com uma tabela que armazena o resultado das partidas
+    /// </summary>
+
     public async Task AsyncCriarTabela()
     {
+        // criando conexão com o banco de dados
         using (var conexao = new SqliteConnection("Data Source=Data/partidas.db"))
         {
             await conexao.OpenAsync();
@@ -48,6 +54,12 @@ public class AppDbContext
             await comando.ExecuteNonQueryAsync();
         }
     }
+
+    /// <summary>
+    /// Esta função insere os dados das partidas anteriores no banco de dados
+    /// </summary>
+    /// <param name="temas">os 4 temas selecionados</param>
+    /// <param name="letra">a letra selecionada</param>
 
     public async Task AsyncInserir(string[] temas, char letra)
     {

@@ -27,6 +27,7 @@ class Program
 {
     static async Task Main()
     {
+        // começando a cronometrar o tempo
         long stopwatch = Stopwatch.GetTimestamp();
 
         char[] alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
@@ -51,19 +52,28 @@ class Program
         await data.AsyncCriarTabela();
         // inserindo dados na tabela
         await data.AsyncInserir(temasEscolhidos, letraEscolhida);
-
+        // imprimindo o tempo gasto para realisar as tarefas anteriores
         var tempoDecorrido = Stopwatch.GetElapsedTime(stopwatch);
         Console.WriteLine($"Tempo decorrido: {tempoDecorrido.Milliseconds}ms");
     }
 
     static char EscolherLetra(char[] alfa, Random random)
     {
+        /// <summary>
+        /// Esta função seleciona uma letra para o jogo
+        /// </summary>
+        /// <returns>Um caractere (letra) aleatório</returns>
         char letra = alfa[random.Next(0, alfa.Length - 1)];
         return letra;
     }
 
     static string[] EscolherTema(List<string> temas, Random random)
     {
+        /// <summary>
+        ///  Esta função escolhe 4 temas para o jogo
+        /// </summary>
+        /// <return>Um array de strings contendo 4 temas de adedonha</return>
+
         string[] temasSelecionados = new string[4];
         for(int i = 0; i < 4; i++)
         {
