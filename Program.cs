@@ -63,6 +63,7 @@ class Program
         /// Esta função seleciona uma letra para o jogo
         /// </summary>
         /// <returns>Um caractere (letra) aleatório</returns>
+        
         char letra = alfa[random.Next(0, alfa.Length - 1)];
         return letra;
     }
@@ -72,7 +73,7 @@ class Program
         /// <summary>
         ///  Esta função escolhe 4 temas para o jogo
         /// </summary>
-        /// <return>Um array de strings contendo 4 temas de adedonha</return>
+        /// <returns>Um array de strings contendo 4 temas de adedonha</returns>
 
         string[] temasSelecionados = new string[4];
         for(int i = 0; i < 4; i++)
