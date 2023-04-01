@@ -21,11 +21,14 @@
 // SOFTWARE.
 
 using adedonha.Data;
+using System.Diagnostics;
 
 class Program
 {
     static async Task Main()
     {
+        long stopwatch = Stopwatch.GetTimestamp();
+
         char[] alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
         var temas = new List<string>(){
             "profissôes","animais"  ,"cidades",
@@ -48,6 +51,9 @@ class Program
         await data.AsyncCriarTabela();
         // inserindo dados na tabela
         await data.AsyncInserir(temasEscolhidos, letraEscolhida);
+
+        var tempoDecorrido = Stopwatch.GetElapsedTime(stopwatch);
+        Console.WriteLine($"Tempo decorrido: {tempoDecorrido.Milliseconds}ms");
     }
 
     static char EscolherLetra(char[] alfa, Random random)
