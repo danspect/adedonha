@@ -49,9 +49,9 @@ class Program
         Console.WriteLine($"Letra: {letraEscolhida}");
         Console.WriteLine($"Temas: {String.Join(", ", temasEscolhidos)}");
         // criando tabela no banco de dados (só criará se não existir)
-        await data.AsyncCriarTabela();
+        await data.CriarTabelaAsync();
         // inserindo dados na tabela
-        await data.AsyncInserir(temasEscolhidos, letraEscolhida);
+        await data.InserirAsync(temasEscolhidos, letraEscolhida);
         // imprimindo o tempo gasto para realisar as tarefas anteriores
         var tempoDecorrido = Stopwatch.GetElapsedTime(stopwatch);
         Console.WriteLine($"Tempo decorrido: {tempoDecorrido.Milliseconds}ms");

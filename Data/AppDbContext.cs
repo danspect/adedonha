@@ -35,7 +35,7 @@ public class AppDbContext
     /// de dados com uma tabela que armazena o resultado das partidas
     /// </summary>
 
-    public async Task AsyncCriarTabela()
+    public async Task CriarTabelaAsync()
     {
         // criando conexão com o banco de dados
         using (var conexao = new SqliteConnection("Data Source=partidas.db"))
@@ -61,7 +61,7 @@ public class AppDbContext
     /// <param name="temas">os 4 temas selecionados</param>
     /// <param name="letra">a letra selecionada</param>
 
-    public async Task AsyncInserir(string[] temas, char letra)
+    public async Task InserirAsync(string[] temas, char letra)
     {
         using (var conexao = new SqliteConnection("Data Source=partidas.db"))
         {
