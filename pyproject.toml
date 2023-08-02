@@ -2,7 +2,7 @@
 name = "adedonha"
 version = "0.1.0"
 description = "Uma implementação em python do jogo adedonha"
-authors = ["Daniel Aspect <dnh77227@gmail.com>"]
+authors = ["Daniel Aspect"]
 license = "MIT"
 readme = "README.md"
 
