@@ -1,3 +1,4 @@
+#!usr/bin/env python
 # Copyright (c) 2023 Daniel Aspect
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
