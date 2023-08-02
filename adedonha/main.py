@@ -17,4 +17,31 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+import random
 
+
+temas: list = [
+    "profissões",
+    "animais",
+    "cidades",
+    " paises",
+    "comidas",
+    "cores",
+    "marcas",
+    "carros",
+    "planetas",
+    "personagens",
+]
+
+alfabeto: list = list("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+
+
+def escolher_letra(alfabeto: list):
+    return alfabeto[random.randint(0, len(alfabeto) - 1)]
+
+
+def escolher_tema(temas: list):
+    return temas[random.randint(0, len(temas) - 1)]
+
+
+print(f"Tema: {escolher_tema(temas)}\nLetra: {escolher_letra(alfabeto)}")
