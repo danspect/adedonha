@@ -22,7 +22,7 @@ import random
 import json
 
 with open("adedonha/config.json", "r") as f:
-    config = json.loads(f)
+    config = json.loads(f.read())
 
 
 def escolher_letra(alfabeto: list):
@@ -33,4 +33,4 @@ def escolher_tema(temas: list):
     return temas[random.randint(0, len(temas) - 1)]
 
 
-print(f"Tema: {escolher_tema(config[0])}\nLetra: {escolher_letra(config[1])}")
+print(f"Tema: {escolher_tema(config["temas"])}\nLetra: {escolher_letra(config["alfabeto"])}")
