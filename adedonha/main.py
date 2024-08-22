@@ -19,29 +19,10 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 import random
+import json
 
-
-temas: list = [
-    "profissões",
-    "animais",
-    "cidades",
-    "estado",
-    "paises",
-    "comidas",
-    "cores",
-    "marcas",
-    "carros",
-    "planetas",
-    "personagens",
-    "filmes",
-    "series",
-    "partes do corpo",
-    "Atores",
-    "comidas em ingles",
-    "cores em ingles"
-]
-
-alfabeto: list = list("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+with open("adedonha/config.json", "r") as f:
+    config = json.loads(f)
 
 
 def escolher_letra(alfabeto: list):
@@ -52,4 +33,4 @@ def escolher_tema(temas: list):
     return temas[random.randint(0, len(temas) - 1)]
 
 
-print(f"Tema: {escolher_tema(temas)}\nLetra: {escolher_letra(alfabeto)}")
+print(f"Tema: {escolher_tema(config[0])}\nLetra: {escolher_letra(config[1])}")
