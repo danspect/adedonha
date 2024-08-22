@@ -25,13 +25,20 @@ temas: list = [
     "profissões",
     "animais",
     "cidades",
-    " paises",
+    "estado",
+    "paises",
     "comidas",
     "cores",
     "marcas",
     "carros",
     "planetas",
     "personagens",
+    "filmes",
+    "series",
+    "partes do corpo",
+    "Atores",
+    "comidas em ingles",
+    "cores em ingles"
 ]
 
 alfabeto: list = list("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
