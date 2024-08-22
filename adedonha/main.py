@@ -27,6 +27,11 @@ temas: list = [
     "cidades",
     " paises",
     "comidas",
+    "cores",
+    "marcas",
+    "carros",
+    "planetas",
+    "personagens",
 ]
 
 alfabeto: list = list("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
